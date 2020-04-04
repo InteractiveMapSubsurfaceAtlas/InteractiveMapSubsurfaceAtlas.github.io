@@ -110,11 +110,22 @@ hr {
 }
 
 #index-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("YorkBanner.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Photos/YorkBanner.jpg");
     height: 50%;
     background-position: center;
   }
 
+#journey-image {
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Photos/Journey.jpg");
+height: 50%;
+background-position: center;
+}
+
+#documentation-image {
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Photos/Code.jpg");
+height: 50%;
+background-position: center;
+}
 
 .hero-section-text {
   top: 50%;
