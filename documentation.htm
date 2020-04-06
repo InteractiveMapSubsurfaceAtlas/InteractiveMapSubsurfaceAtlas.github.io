@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900%7COpen+Sans:400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="Photos/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 
@@ -29,16 +30,27 @@
 
     <div class="main-content">
    
-        <h3>heading</h2>
-        
-        <p>Currently, subsurface scientific data collected by consultants during environmental investigations related to 
-            York Region projects (e.g., water taking, capital planning, development review, road occupancy) resides in a 
-            variety of locations, from filing cabinets, digital reports, to databases of Conservation Authorities and the 
-            Province. The existing file structure lacks the capability to enable the SWP team to quickly identify consultant 
-            reports and borehole logs via searching by areas of interest or key words. As a result, many reports added to the 
-            reference library are never looked at again.</p>
+        <p>Please visit the links below to access the user guide and technical guide for the web application.</p>
+        <h3>User Guide</h3> 
+        <a href="UserGuide.pdf" class="multiple"> <i class="fa fa-book"></i> Link to User Guide</a>
 
+        <h3>Technical Guide</h3>
+        <a href="" class="multiple"> <i class="fa fa-wrench"></i> Link to Technical Guide</a>
 
+        <hr>
+		
+        <h3>Future Possibilities</h3>
+        <ul>
+            <li>There needs to be validation for user input to order to protect the integrity of the database. Unfortunately, we weren’t able to dedicate time to figure this out in the scope of this project, however it will be on our to-do list when we start working on the collaborative project!</li>
+            <li>For input of point features, need to discover how to allow users to input Eastings and Northings (manually typing in coordinates) in addition to allows users to use the Geometry Picker. This also means we need to figure out how to configure an either / or scenario in the form settings.</li>
+            <li>Figure out how to link the two layers together? When users click on a report area, we need a way to indicate which boreholes belong to the report area. </li>
+            <li>Explore how subtypes and domains work – do they get transferred over when the feature class is published?</li> 
+            <li>Add the Source Water Protection vulnerable area layers and allow for querying to show which SWP areas the borehole intersects. </li>
+            <li>Need to streamline the two editing workflows because ultimately the Report area and boreholes will be linked – instead of having two separate workflows, try to combine into one. This would make it much easier for the users when they are inputting features. </li>
+            <li>Try out complex navigation for forms (e.g. multi-page forms that allows users to go back and move to the next page) </li>
+       
+        </ul> 
+            
         <hr>
 
     </div>

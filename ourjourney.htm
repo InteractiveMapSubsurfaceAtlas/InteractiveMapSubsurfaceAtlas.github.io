@@ -29,14 +29,124 @@
 
     <div class="main-content">
    
-        <h3>heading</h3></h2>
+        <h3>PHASE 1: Problem Statement and Concept Development </h3>
+
+        <p> <b>Action:</b> The starting point for this journey began with shaping a problem statement from the end users perspective, this was focused on identifying our ideal outcomes, documenting our reality of the current processes, the consequences if this new action is not taken and the proposal we are pushing forward as a group to the user base. </p>
+        <p> <b>Outcomes:</b> Initial scoping of the project was deemed too comprehensive and broad, the goal of the web development assignment was to learn skills and software to aid in the end product of the Spring semester project. Below is a portion of  the initially submitted content which shows the initial scope, which was ultimate pared down to what is seen on the homepage. </p>
+        <p> <i>A Geocortex-based interactive application interface where the user can upload the reports (polygon) and boreholes (point) data. A link to view or download reports. Also, a workflow to show all the boreholes that fall within a report area. A workflow to identify all the Source Water protection GIS layers for a selected report or borehole. A way for the user to select any area on the map and have all reports that fall within that be identified. And a manual to help user understand the use of application. </i></p>
+        <p> <b>Next Steps: </b> Explore Geocortex 5 software and break out to develop our individual tasks. </p>
         
-        <p>Currently, subsurface scientific data collected by consultants during environmental investigations related to 
-            York Region projects (e.g., water taking, capital planning, development review, road occupancy) resides in a 
-            variety of locations, from filing cabinets, digital reports, to databases of Conservation Authorities and the 
-            Province. The existing file structure lacks the capability to enable the SWP team to quickly identify consultant 
-            reports and borehole logs via searching by areas of interest or key words. As a result, many reports added to the 
-            reference library are never looked at again.</p>
+        <hr class="nomarginhr">
+
+    </div>
+	
+	
+    <div class="main-content">
+   
+        <h3>PHASE 2: Getting Familiarized with Geocortex 5 Web and Workflow</h3>
+        
+        <p> <b>Action:</b> This week our goal was focused on getting oriented with and learning the capabilities of 
+            Geocortex 5-series Web and Workflow as we all had no prior experience with the software. 
+            Without understanding what the product can do, it was challenging to effectively identify 
+            specific tasks and delegate different roles. Therefore, we decided to each experiment with 
+            different aspects of the software in the context of our project.</p>
+
+        <p> <b>Outcomes:</b> The team found useful resources including video tutorials, the documentation center, a Geocortex Workflow demo site. We shared our discoveries after experimenting with the software and are beginning to feel more comfortable with the interface. </p>
+        
+        <p> <b>Challenges and Lessons Learned:</b></p>
+        <ul>
+            <li>Noted differences between Geocortex Essentials and Geocortex 5.</li>
+            <li>In order to display the feature service layers in the Web viewer, they have to be added to a Web Map created in ArcGIS Online, then selected in the Map component.</li>
+            <li>Biggest discovery is finding the <a class="multiple" href="demo.geocortex.com/Html5Viewer/index.html?viewer=GXWF_Sample_Site.GVH"> Geocortex Workflow demo site</a>! This site has various templates that showcase 
+            the functionalities / what is possible in Workflow. Being able to take a look at how the different Workflow tools work together is very helpful to understanding the syntax of the expressions used for 
+            each tool.</li>
+            <li>Discovered an incorrect way to have feature attachments for features.. running the Enable Attachments geoprocessing tool in ArcGIS Desktop and then the attachment will also be published along with the feature class. 
+            Learned from Shawn how the feature attachments are actually stored.</li>
+        </ul>
+
+        <p> <b>Next Steps:</b> Split up into two teams to tackle customization in Workflow and Web. </p>
+        
+        <hr class="nomarginhr">
+
+    </div>
+	
+	
+    <div class="main-content">
+   
+        <h3>PHASE 3A: Development in Geocortex Workflow</h3>
+        
+        <p> <b>Action:</b> Create workflows to allow for different required functionalities. 
+            These include: adding attachments to features, creating a feature, editing attributes 
+            of existing features, deleting one or more features that are selected by the user at the 
+            same time, and searching by keyword.</p>
+        
+        <p> <b>Outcomes:</b> Built workflows for feature creation/attachments and deleting. 
+            Used existing workflow templates available to accomplish the remaining functions. Created a <a class="multiple" href="https://luna.flemingcollege.ca/Geocortex/WebViewer/?app=bf4f8e95c2464a3c85d5019df77261b1"> demo version</a> to
+            demonstrate all functionalities.</p>
+
+        <p> <b>Challenges and Lessons Learned:</b></p>
+        <ul>
+            <li>Wasn't able to allow for editing and deleting of features when publishing feature classes to ArcGIS Server...eventually tried 
+                publishing to ArcGIS Online as a hosted feature layer and it finally allowed for create/update/delete capabilities! </li>
+            <li>When stuck on the feature creating workflow, searching up the problem on the discussion form in the Geocortex Community website
+                helped a lot. Although there was not a question with the exact same issue, there were solution workflow templates attached to answers and
+                looking at how other people built their workflows eventually helped me identify the issue. For example, initially I used the Set attributes
+                tool after the Add Features tool - turns out the order should be switched.</li>
+            <li>Learned how to use the Loop tool to allow for as many features as the user would like to be created and to automatically delete more than one features selected.</li>
+            <li>Best discovery was finding an existing Editing Features Workflow and Searching by Attributes workflow! Strangely these workflows were not directlty available via Geocortex Workflow, but if you
+                head to Geocortex Web and navigate to the individual layers in the Web Map, there will be an option to create a new workflow and includes existing templates! Wish we discovered this earlier after dedicating 
+                so much time trying to built an Editing workflow from scrach, but grateful to have found this out. </li>
+            <li>Another roadblock encountered was different data types of attributes not being populated in the feature service feature. Was it a data type issue / did I need to convert the data types, if so how do we accomplish that? Eventually 
+                found out that instead of using the Set Features tool, we can just use the attributes parameter of the Create Features tool, and it successfully populated the feature with the user provided attributes </li>
+            <li>Attachments were not showing up in Web Viewer! Turns out we need to configure the pop up in the ArcGIS Online web map. </li>
+            <li>Debugging tips when we were troubleshooting our workflows: Use the Geocortex Workflow sandbox and take a look at the console while running the Workflow to check for JavaScript specific error codes to troubleshoot. 
+                Most helpful tip, however, is to add Alert messages after every single tool used! This will let you figure out whether every tool was running properly as you wish and also allows you to check for each output.</li>
+            <li>Discovered how to link workflows to the web viewer. Add the workflow as a menu item and select the workflow of your choice. </li> 
+        </ul> 
+        <hr class="nomarginhr">
+
+    </div>
+	
+    <div class="main-content">
+   
+        <h3>PHASE 3B: Development in Geocortex Web</h3>
+        
+        <p> <b>Action:</b> Workflows are all available and ready to be used. All that is left to do is customizing the Web Viewer in Geocortex Web that
+        makes it easy for users to navigate and also includes other essential features.</p>
+        <p> <b>Outcomes:</b> Web viewer has been modified to  </p>
+        <p> <b>Challenges and Lessons Learned:</b> </p>
+        <ul>
+            <li>Learned that not all symbology created in ArcGIS Pro will transfer over to Web Developer. The Municipal Boundary Layer of York Region had a gradient outline in Pro, with however was not possible to display by the Web Developer.</li>
+            <li>Experienced a bug that made it impossible to insert a map if no map was already present. It was only possible to switch out an already existing map. I (Mike) encountered the problem in various forums which stated the bug is known to Geocortex.</li>
+            <li>Had a problem displaying images until I (Mike) found out that the images hosted on ArcGIS Online were only shared organization wide and that for Geocortex Web Developer to be able to pull them they had to be shared publicly.</li>
+            <li>Found out that templates can be shared, this may come in handy for our final collaboration project and save time not duplicating work.</li>
+        </ul> 
+        
+        <hr class="nomarginhr">
+
+    </div>
+	
+	
+    <div class="main-content">
+   
+        <h3>PHASE 4: Progress Review with Shawn</h3>
+
+        <p> <b>Action:</b> This step focused on showcasing our application and workflows to an outside audience before making final changes to the product. This was done from in a mini seminar format to screen share, showcase aspects and react to inquiries from an outside source. Much like a presentation to stakeholders it required a through knowledge of the product, and the ability to navigate and respond to questioning to demonstrate a robust product.  </p>
+        <p> <b>Outcomes:</b> It was a crucial step in finding our where the disconnect between user and creator comes into play. This showed us portions of our user interface which may not be intuitive at first glance, which is easy to lose sight of when developing a product for weeks at a time. Shawn provided welcomed feedback and showcased what Geocortex was actually doing behind the scenes from some of the developed workflows, this was an available function on most ESRI REST endpoints.  </p>
+        <p> <b>Next Steps: </b> Polishing the web app into an easier to use interface with a demonstration and user guide to accompany it.  </p>
+        
+        <hr class="nomarginhr">
+
+    </div>
+	
+	<div class="main-content">
+   
+        <h3>PHASE 5: Final Submission </h3>
+
+        <p> <b>Action:</b>Tying all the content into one easy to navigate and consumable resource. Acting as a frontline demonstration of the new web resources and processes developed over this project.</p>
+        <p> <b>Outcomes:</b> What you see here is the final site! This provides a context of the learning steps taken by our group and the products developed by Geocortex Essentials 5, and Geocortex Workflow.  </p>
+        <p> <b>Next Steps: </b> Onto the final spring project!   </p>
+        
         <hr>
     </div>
 

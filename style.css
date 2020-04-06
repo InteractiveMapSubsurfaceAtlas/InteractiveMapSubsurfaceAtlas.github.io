@@ -24,8 +24,17 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+
 /*paragraph styling*/
-p { 
+p, ul { 
     font-size: 16px;
 }
 
@@ -46,6 +55,11 @@ hr {
     color: gray;
     margin-bottom: 30px;
     margin-top: 40px;
+}
+
+.nomarginhr {
+    margin-top: 40px;
+    margin-bottom: 0px;
 }
 
 /*Navigation bar*/
@@ -148,6 +162,11 @@ footer {
     font-size: 10px;
     margin-top: 0px;
  }
+
+
+ /** 
+Our team
+ **/
  .row {
     display: flex;
   }
@@ -166,3 +185,71 @@ footer {
     padding-bottom: 0px;
 
   }
+
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  
+  .container {
+    padding: 0 16px;
+    text-align: left;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+
+
+  /* underlining with and changing text to green when hover */
+
+a.multiple {
+	color: #00539b;
+	background-image: linear-gradient(to bottom, transparent 90%, #303289 0);
+	background-size: 0% 100%;
+	background-repeat: no-repeat;
+	text-decoration: underline;
+    transition: background-size .4s ease;
+    font-size: 16px;
+}
+
+a.multiple:hover {
+	background-size: 100% 100%;
+	color: #303289;
+	cursor: pointer;
+}
+
+a {
+	background-image: linear-gradient(to bottom, transparent 96%, white 0);
+	background-size: 0% 100%;
+	background-repeat: no-repeat;
+	text-decoration: underline;
+    transition: background-size .4s ease;
+}
+
+a:hover {
+	background-size: 100% 100%;
+	color: white;
+	cursor: pointer;
+}
